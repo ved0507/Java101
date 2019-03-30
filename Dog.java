@@ -16,5 +16,7 @@ void hungery(){
 }
 void sleeping(){
 	System.out.println("Sleep");
+void walking(){
+	System.out.println("Waking");
 }
 }
