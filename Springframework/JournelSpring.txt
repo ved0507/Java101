@@ -1,0 +1,216 @@
+What is Spring framework
+
+It is lot of things put into one
+Dependency injection
+spring makes it easy
+Using polymorphisam in action
+<<Method parameter>>
+Shape
+	draw()
+
+Circle
+	draw()
+	
+Triangle
+	draw()
+	
+Application class:
+	Shape shape= new Circle();
+	shape.draw();
+		
+	Shape shape= new Triangle();
+	shape.draw();
+	
+instead of the above code
+we do this 
+public void myDrawmethod(Shape shape){
+	shape.draw();
+somwwhere in the class
+
+Shape shape = new Triangle()
+myDrawmethod(shape);
+<<Class member>>
+<<<<<<<Drawing class>>>>>
+protected class Drawing{
+	private Shape shape;
+	
+	public setShape(Shape shape){
+		this.shape=shape;
+	}
+	public myDrawing{
+		this.shape.draw();
+	}
+}
+<<<Differnt class>>>
+Triangle myTriangle = new Triangle();
+drawing.setShape(myTriangle)
+drawing.myDrawing();
+
+
+#SPRING CONATAINER
+Spring Factory Bean
+Dependency injection  - it is possible because Sprinf is actually a container 
+factory of beans
+
+eg. servlet container -tomcat
+tomcat creates servlet object which are required to run an application 
+configure all the servelets in an xml and supply classes
+
+Spring is conainer of Beans
+
+Spring container
+can have many objects
+we can have objects outside container
+But adding objects inside container have an advantage
+
+Spring Bean Factory
+
+DrawingApp.java
+Triangle.java
+
+pacakage org.darth.vedar;
+//import xml bean factory
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+public class DrawingApp{
+	public static void main(String args[]){
+	
+		//Trinagle triangle=new Triangle();
+		
+		BeanFactory factory =new XmlBeanFactory(new FileSystemResource('spring.xml'));
+		Triangle triangle=(Triangle) factory.getBean("triangle");
+			
+		triangle.draw();
+	}
+	
+}
+
+public class Triangle{
+	public static void main(String args[]){
+		public void draw(){
+			System.out.println("Draw Triangle");
+		
+		}
+	}
+	
+}
+
+
+
+create a xml spring.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "//http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle"class="org.darth.vedar.Triangle">
+	<property name="type" value="Equilateral"/> -->
+	
+	<!-- specify the data type -->
+	<constructor-arg int="int" value="20"> -->
+	<constructor-arg type="java.lang.String" value="Equilateral"/>
+	
+	<!-- OR specify with index-->
+	<constructor-arg index="0" value="Equilateral"/>
+	<constructor-arg index="1" value="20"/>
+</bean>
+
+
+#==================================================================================================================================================================
+
+* IOC  - inversion of control and dependancy injection
+
+>> IOC  makes code loosely coupled
+>> IOC container is responsible to inject the dependency
+>> We provide meta data to IOC container by XML file or annoation
+Eg.
+#without dependancy
+class Employee{
+Address address;
+
+Employee(){
+address = new Address();
+
+
+}
+}
+# with dependency
+class Employee{
+Address address;
+Employee(Address address){
+this.address=address}
+}
+
+* Advantages of Spring framework
+
+>> Predefined templates - provides tamplates for JDBC,Hibernates,JPA etc
+>> Loose coupling - Spring apps are loosely coupled, due to dependancy injection
+>> Easy to test - Dependency injection makes easier to test and spring framework doesnt need server
+>> Lightweight - Because of POJO(plain old java obj) its lightweight .It allows programmer not to inherit the class or implement any interface
+>> Fast development - eaay to develop the javaee app
+>> Powerful abstraction - JDBC JPA JMS JTA
+>> Declarative support - caching validation transactions & formating
+
+* Spring Example
+
+steps to follow
+>> create class
+>> create xml file to provide the values
+>> create test class
+>> load the spring jar files
+>> run the test class
+
+
+>> Create class
+pacakge com.ved.burli
+
+public class Student{
+
+
+
+public String getName(){
+return name;
+}
+public void setName(String name){
+this.name=name;
+}
+public displayInfo(){
+
+System.out.println("Hello General Kenobi...")
+		
+	}
+}
+
+>> Create XML file aplicationContext.xml file
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="studentbean" class="com.ved.burli">
+<property name="name" value="Vedavys Burli"></property>
+</bean>
+
+>> Create test class
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class Test{
+
+public static void main(String args[]){
+Resource resource = new ClassPathResource("application.xml");
+BeanFactory factory =new XmlBeanFactory(resource);
+
+Student student =(student)factory.getBean("studentbean");
+student.displayInfo();
+}}
+
+
+
+
+

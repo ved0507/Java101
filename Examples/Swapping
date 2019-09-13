@@ -1,0 +1,21 @@
+import Scanner;
+c
+class Swapping{
+	
+	public static void swap(String x,String y){
+		String tmp = x;
+		x = y;
+		y = tmp;
+	}
+	
+	
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		input1=sc.nextLine();
+		input2=sc.nextLine();
+		Swapping sw = new Swapping();
+		swap(input1,input2);
+		System.out.println(input1);
+		System.out.println(input2);
+	}
+}

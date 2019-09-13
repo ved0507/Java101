@@ -1,0 +1,5 @@
+Spark micro batching for real time streaming
+1. open source general purpose & fast cluster computing enigine used for 
+processing and analyzing a large amount of data
+
+2. 
