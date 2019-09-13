@@ -1,0 +1,558 @@
+
+README.md 
+Devops
+1. Continuous integration - helps in automating the nuild process enabling frequent integration Quality check and testing
+2. continuous delivery - extension to CI validation and verifying the automation rediness through usage of appropriate tools
+
+People ------------------- process ------------ technology
+
+SOLID
+Single responsibility principle - class should have only one reason to change
+Open closed principle - open to extension closed to modification
+liskov substitution principle - function pointers or ref to base classes must be able to use object of derived class without knowing
+
+interface segrigation principle - client should not use interface that they dont use
+dependency inversion principle - THere should not be any dependency between high level and low level modules
+
+todo
+keyboard practice  55 min
+learn new language 45 min
+
+
+
+java usees JIT just in time  to convert text into bytecodes
+
+oops concepts
+Inheritance
+encpsulation
+polymorphisam
+abstraction
+
+
+ABSTRCTION - HIDE THE UNWANTED
+what is abstract class?
+abstract - is selecting the data  from larger pool and showing only relavant data to object
+
+class Bank
+info- name ,address ,number ,tax info, favfood ,maritialstatus ,qualification, favactor, favmovie
+we may not need to show fav food,  actor , movie
+So sending useful data from the above pool is abstraction
+
+abstract class
+a class which is declared as abstract is called abstract class
+a normal class cannot be abstrcty class
+
+abstract method - a method without body is abstract method
+must be declared ion abstract class. ONLY A signiture
+
+differences ENCAPSULATION AND ABSTRACTION AND INTERFACE
+points of Abstraction
+0. solves at design level
+1. It is about hiding unwanted details and showing most essential information
+2. focus on what info obj must contain
+3. it can have both abstract and non abstract
+4. doesnt support multiple inheritnce
+5. it can have protected and public method
+6. it can have final, static and final static var wth any access specifier
+
+points of encapsulation:
+0. solves at implementation level
+1. hiding the code and data into single unit
+2. hiding details of how much obj does something for security reasons
+
+points on INTERFACE
+0. only public static final variable
+1. only abstract method
+2. support multiple inheritance
+3. only public abstract method
+ 
+ pros
+ 1. allows you to communicate with related classed as siblings
+ 2. reduce complexity of design and implementaion
+ 
+ 
+polymorphisam
+what is ploymorphisam
+INtroduction to polymorphism
+ability of object behaving differently for same method is called polymorphism
+
+types of polymorphism
+static and dynamic 
+static
+1. method over loading 
+2. uses compile time binding 
+3. method invoked is based on the reference type 
+dynamic 
+1. Method overriding 
+2. uses Run time binding 
+3. Method invoked based on object type 
+
+public class Loan{
+public static void main(String args[]){
+int tenure;
+double principle;
+float interest;
+String accounnumber;
+
+Loan(){
+tenure=10;
+interest=8.5f;
+}
+public double EMIreturn(int tenure,double interst){
+return 200;}
+
+}
+public double EMIreturn(int tenure,double principle){
+return 200;}
+
+}
+}
+
+NOTE: return type of method is not consider for overloading 
+
+
+METHOD OVERRIDING
+Method overriding 
+Dynamic method dispatch 
+runtime polymorphism
+
+
+Method and constructor
+1. constructor is invoked implicitly
+2. it is used to initialize state of an objects
+3. constructor name must be same as class name
+
+Method
+1. used to expose the behaviour of the obj
+2. must have a return type
+3. invoked implicitly
+4. method may or may not be same as class name
+
+Static variable is used to refer comman property of all obj
+
+This keyword refer to the current obj
+or current class obj
+
+Variable is a container
+holds the value while java program is getting executed
+variable assigned with data type
+three types of variables
+static
+local 
+instance
+
+
+
+Local variable declared inside the body of method 
+Can be used within the method
+It cannot be defined with static keyword
+
+Instance decalred inside class but outside method
+its instance specific values cannot be shared among instance
+
+static variable
+declared static 
+cannot be local
+memory allocation happens only once
+
+
+class Addition{
+public static void main(String args[])
+{
+int a =10;
+int b =12;
+int c =a+b;
+System.out.println("vaule"+ c)
+}}
+
+
+
+Widening
+class Sample{
+public static void main(String args[])
+{
+int a =10;
+float f=a;
+Sysatem.out.println(a)
+Sysatem.out.println(f)
+}}
+
+Narrowing - Typecasting
+class Sample{
+public static void main(String args[])
+{
+float f=10.5f;
+//if we define int a=f;//compile time error
+int a=int(f);
+System.out.println(a)
+System.out.println(f)
+}}
+
+
+Overflow
+class Sample{
+public static void main(String args[])
+{
+int a =130;
+byte b=(byte)a;
+System.out.println(a)
+System.out.println(b)
+}}
+out: 130
+-126
+
+Adding lower type
+
+class Sample{
+public static void main(String args[])
+{
+int a =10;
+float f=a;
+System.out.println(a)
+System.out.println(f)
+}}
+
+
+===========
+Data types
+
+Primitive Data types
+- boolean int float short double
+
+Non-Primitive Data types 
+- String Class array interfaces
+
+
+FUNFACT: Java is a typed programming language it means all variables must be declared  before using it
+
+====================================INFY Library notes=======
+README-start
+JAVA - Introduction to Class and object
+Naming convention
+naming conventions
+Java follows camel-case syntax for naming the class, interface, method, and variable.
+
+class starts with upper case and it should be a noun
+interface starts with upper case and it should be a adjective
+
+method should starts with lower case and it should be verb
+
+pacakage should be separated by dot
+pacakage com.javapoint
+DONT USE "UNDERSCORE" IN ANY OF THE ABOVE
+
+constant should be upper case like RED and we can use underscore
+
+Object and Class
+In java we design program using object and Classes
+
+OBJECT
+An entity that has state behaviour 
+
+Object has three characteristics
+1. State - represents data/value of an object
+2. Behaviour - represent behaviour /functionality of an obejct
+3. Identity - it is implemented internally by JVM to identify each object uniquely
+
+Object Definitions:
+
+An object is a real-world entity.
+An object is a runtime entity.
+The object is an entity which has state and behavior.
+The object is an instance of a class.
+
+
+CLASS
+It is a group of objects which have common properties
+It is a logical entity
+contains
+1. Field
+2. method
+3. blocks
+4. constructors
+5. nested class and interface
+
+instance variable - created inside the class but outside the method
+- it gets memory at runtime
+local variable
+static variable
+
+Method in java
+it is a function which is used to expose behavior of an object
+advantages 
+code reusability  and optimization
+
+new keyword is used to allocate memory at runtime
+
+E.g.
+//creating a class Student to illustrate how to define class and fields
+
+class Student{
+//defining fields
+int id;//field /instance variable
+String name;
+//creating main method inside student class
+public static void main(String args[]){
+//creating object /instance
+Student s1 =new Student();//create object of student 
+//printing values of the object
+System.out.println("value"+s1.id)//accessing member through refe varaiable
+}
+
+
+
+
+python
+#OOPS concepts
+
+
+Class is a blueprint from which specific objects are created
+class
+Class variable a variable is shared by all instance
+instance variable unique to each instance
+data member
+
+
+eg. 
+class Lion:
+	def __init__(self,color,legs):
+		self.color=color
+		self.legs=legs
+	def roar(self):
+		print("ROOOOAR")
+Thunder =Lion("ginger",4)
+Makalu =Lion("Golden",4)
+MrT =Lion("brownBeard",4)
+MrT.roar()
+
+__init__ most important method in the class
+
+
+
+
+INheritance
+a class can inherit attributes and behaviour methods from another class
+ 
+class Tiger(Lion):
+	pass
+
+
+Thunder =Tiger("ginger",4)
+Makalu =Tiger("Golden",4)
+MrT =Tiger("brownBeard",4)
+MrT.roar()
+
+
+
+#================================
+pacakage burli
+
+class StringClass{
+public statc void main(String args[]){
+String myString= "Hello world";
+int myStringLength = myString.length();
+String myString1lower = myString.toLowerCase();
+System.out.println(myString1lower);
+
+
+}}
+
+
+
+
+myString.replace('e','a')
+myString.index('e')
+
+user input 
+import java.util.scanner;
+
+Scanner myVar = new Scanner(System.in)
+
+
+Inheritance
+Class aquires property of another class
+child inherit traits of parents
+
+1. Single Inheritance
+2. Multiple Inheritance  - java doesnt support
+3. multilevel inheritance
+3. herarchial inheritance
+
+
+parent is super class
+child is sub class
+
+class subclass extends supeclass
+{
+method and fields
+}
+
+eg.
+Doctor is a Surgeon
+
+
+
+class Doctor{
+
+String D_details(){
+return "I am Doctor";
+
+}}
+class Surgeon extends Doctor{
+String S_details(){
+return "I am surgeon"
+}}
+}
+
+class Hospital{
+public static void main(String args[]){
+Surgeon s =new Surgeon();
+s.D_details();
+s.S_details();
+}
+}
+
+Monday
+Nine-Nine-Ninteen 
+
+Inhertiance
+
+child class gets all the attributes from parent obect
+is a relationship
+parent child relationship
+
+uses
+1. basic idea is to reuse the methods and fields of parentclass 
+2. Overriding - run time polymorphisam can be achived
+
+term used in inheritance
+1. SuperClass - parent class
+2. SubClass - child class
+3. ReusABILITY - use of methods and fields of existing class 
+
+class Subclass extends superclass
+{
+//methods and fields
+}
+
+
+
+class Employee{
+float sal=23000;
+}
+class Programmer extends Employee{
+int bonus=1000;
+}
+public static void main(String[] args){
+Programmer p = new Programmer();
+SOP("Programmer sal "+p.sal);
+}
+
+
+
+
+NOTE: on Inheritance
+1. Final method cannot be overridden - if we 
+try to call it we will get complie time error
+2. function with static run time polymorphisam doesnt happens
+
+
+What is Exception 
+Exception handling in JAVA 
+
+1. what is exception
+In Java, when there any distruption in normal flow of program exception occurs
+
+exception handling
+it is a machanisam to handle runtime error such as IOException etc
+
+Advantages
+1. Mantain the normal flow of the application
+
+Hierarchy
+Throwable
+1. Exception - IO SQL ClassNotFound Runtime(artimmatic nullpointer number format Indexoutofbound(array string))
+2. Error - stackoverflow virtualmachineerror outofmemoryerror
+
+
+types of java exception
+1. checked
+2. unchecked
+
+checked exceptions - directly inherit the 
+throwable class except runtime exception
+
+unchecked exceptions - directly inherit the runtimeexception
+They are not checked at compile time but they are checked at runtime
+
+5 keywords used in handling exception
+try catch finally throw throws
+
+
+
+
+
+try catch finally block
+
+int div(int a ,int b)throws 
+aritmaticException{
+if(b==0){
+throw new 
+ArithmaticException("divisino by zero")}
+else{
+return a/b};
+}
+
+
+try 
+{
+}
+catch(ExceptionType1 e1){
+}
+
+
+
+Oops Concept
+- Object
+- Class
+-Abstraction
+- Inheritance
+- Encapsulation
+- Polymorphism
+
+
+What is Object
+- Real World entity
+- task perfromed
+- properties
+- Instance of class
+
+Class
+- Blueprint a object should follows
+
+
+Abstraction- Showing only essential parts
+ and hiding the implementation details
+ 
+ 
+Encapsulation
+Binding varibales/fields and methods into single entity
+
+
+Iheritance
+Acquring the properties of one class to another class
+
+Parent class - Super class - base class
+
+Child class -  Sub class  - Derived class
+
+Plymorphism  
+performing same task in differnt ways
+
+
+Single level inheritance
+Hirarchical 
+multilevel
+
+Note:
+Java doesnt Support multiple inhertance
